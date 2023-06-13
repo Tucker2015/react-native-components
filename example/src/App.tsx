@@ -34,7 +34,7 @@ export default function App() {
         backgroundOverlayColor="rgba(0, 0, 0, 0.3)"
         open={visible}
         onClose={() => setVisible(false)}
-        items={list} // Pass items as a prop here
+        items={list}
       />
     </View>
   );
