@@ -4,18 +4,54 @@ A set of React Native Components
 
 ## Installation
 
+With NPM
+
 ```sh
-npm install react-native-components
+npm install @kevtucker/react-native-components
+```
+
+With Yarn
+
+```sh
+yarn add @kevtucker/react-native-components
 ```
 
 ## Usage
 
 ```js
-import { multiply } from 'react-native-components';
+import { BottomSheet } from '@kevtucker/react-native-components';
 
-// ...
+export default function App() {
+  const [visible, setVisible] = React.useState(false);
 
-const result = await multiply(3, 7);
+  const list = [
+    {
+      title: 'Item 1',
+      onPress: () => console.log('Item 1 pressed'),
+    },
+    {
+      title: 'Item 2',
+      onPress: () => console.log('Item 2 pressed'),
+    },
+    {
+      title: 'Item 3',
+      onPress: () => console.log('Item 3 pressed'),
+    },
+  ];
+
+  return (
+    <BottomSheet
+      title="Set a timer"
+      isCancelable
+      onCancel={() => console.log('Cancel pressed')}
+      sheetBackgroundColor="hsl(218, 39%, 40%)"
+      backgroundOverlayColor="rgba(0, 0, 0, 0.3)"
+      open={visible}
+      onClose={() => setVisible(false)}
+      items={list}
+    />
+  );
+}
 ```
 
 ## Contributing

@@ -1,6 +1,6 @@
 {
   "name": "@kevtucker/react-native-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "test",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -48,7 +48,7 @@
   },
   "homepage": "https://github.com/Tucker2015/react-native-components#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://npm.kevtucker.com"
   },
   "devDependencies": {
     "@evilmartians/lefthook": "^1.2.2",
