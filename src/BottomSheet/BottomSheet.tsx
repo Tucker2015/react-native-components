@@ -69,17 +69,22 @@ export const BottomSheet = ({
           <View>
             {items.map((item, index) => (
               <React.Fragment key={index}>
-                <Text
-                  style={styles.itemText}
-                  onPress={() => {
-                    if (item.onPress) {
-                      item.onPress();
-                      handlePressOutside();
-                    }
-                  }}
-                >
-                  {item.title}
-                </Text>
+                <View style={styles.itemContainer}>
+                  {item.icon && (
+                    <View style={styles.iconContainer}>{item.icon}</View>
+                  )}
+                  <Text
+                    style={styles.itemText}
+                    onPress={() => {
+                      if (item.onPress) {
+                        item.onPress();
+                        handlePressOutside();
+                      }
+                    }}
+                  >
+                    {item.title}
+                  </Text>
+                </View>
                 {index < items.length - 1 && (
                   <View
                     style={[styles.divider, { backgroundColor: textColor }]}
@@ -112,6 +117,14 @@ const styles = StyleSheet.create({
   divider: {
     height: 1,
     marginVertical: 14,
+  },
+  itemContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 1,
+  },
+  iconContainer: {
+    marginRight: 10,
   },
   sheet: {
     borderTopLeftRadius: 20,

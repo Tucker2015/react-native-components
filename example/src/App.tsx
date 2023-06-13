@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { StyleSheet, View } from 'react-native';
 import { Button, BottomSheet } from 'react-native-components';
+import IonIcons from '@expo/vector-icons/Ionicons';
 
 export default function App() {
   const [visible, setVisible] = React.useState(false);
@@ -9,14 +10,17 @@ export default function App() {
     {
       title: '5 minutes',
       onPress: () => console.log('5 minutes'),
+      icon: <IonIcons name="alarm-outline" size={20} color="#fff" />,
     },
     {
       title: '10 minutes',
       onPress: () => console.log('10 minutes'),
+      icon: <IonIcons name="alarm-outline" size={20} color="#fff" />,
     },
     {
       title: '15 minutes',
       onPress: () => console.log('15 minutes'),
+      icon: <IonIcons name="alarm-outline" size={20} color="#fff" />,
     },
   ];
 

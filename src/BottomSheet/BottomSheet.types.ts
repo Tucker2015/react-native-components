@@ -9,6 +9,12 @@ export interface BottomSheetItem {
    * @example () => console.log('Option 1 pressed')
    */
   onPress: () => void;
+  /**
+   * The icon of the item.
+   * @example <Icon name="check" />
+   *
+   */
+  icon?: React.ReactNode;
 }
 export interface BottomSheetTypes {
   /**
