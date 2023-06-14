@@ -23,6 +23,8 @@ export interface BottomSheetTypes {
    * @example 'Select an option'
    */
   title?: string;
+  titleFontSize?: number;
+  itemFontSize?: number;
   open: boolean;
   onClose: () => void;
   /**

@@ -8,19 +8,19 @@ export default function App() {
   const [visible, setVisible] = React.useState(false);
   const list = [
     {
-      title: '5 minutes',
+      title: 'Home Screen',
       onPress: () => console.log('5 minutes'),
-      icon: <IonIcons name="alarm-outline" size={20} color="#fff" />,
+      icon: <IonIcons name="home" size={20} color="#fff" />,
     },
     {
-      title: '10 minutes',
+      title: 'Settings',
       onPress: () => console.log('10 minutes'),
-      icon: <IonIcons name="alarm-outline" size={20} color="#fff" />,
+      icon: <IonIcons name="settings" size={20} color="#fff" />,
     },
     {
-      title: '15 minutes',
+      title: 'Utilities',
       onPress: () => console.log('15 minutes'),
-      icon: <IonIcons name="alarm-outline" size={20} color="#fff" />,
+      icon: <IonIcons name="cog" size={20} color="#fff" />,
     },
   ];
 
@@ -34,6 +34,8 @@ export default function App() {
           console.log('Cancel');
           setVisible(false);
         }}
+        titleFontSize={20}
+        itemFontSize={16}
         sheetBackgroundColor="hsl(218, 39%, 40%)"
         backgroundOverlayColor="rgba(0, 0, 0, 0.3)"
         open={visible}

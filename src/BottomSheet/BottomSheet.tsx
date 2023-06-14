@@ -20,6 +20,8 @@ export const BottomSheet = ({
   isCancelable = false,
   onClose,
   onCancel,
+  titleFontSize = 20,
+  itemFontSize = 16,
   title,
   items = [], // Handle edge case where items is not provided
   sheetBackgroundColor = defaultSheetBackgroundColor,
@@ -47,7 +49,8 @@ export const BottomSheet = ({
   }, [open, animation]);
 
   const coloredTextStyles = [styles.text, { color: textColor }]; // Combine styles that use textColor
-
+  const fontSizeStyles = [styles.text, { fontSize: titleFontSize }]; // Combine styles that use fontSize
+  const itemFontSizeStyles = [styles.itemText, { fontSize: itemFontSize }]; // Combine styles that use fontSize
   return (
     <Modal visible={visible} transparent animationType="none">
       <Animated.View
@@ -64,7 +67,7 @@ export const BottomSheet = ({
           style={[styles.sheet, { backgroundColor: sheetBackgroundColor }]}
           onTouchEnd={(e) => e.stopPropagation()}
         >
-          <Text style={coloredTextStyles}>{title}</Text>
+          <Text style={[...coloredTextStyles, ...fontSizeStyles]}>{title}</Text>
           <View style={[styles.divider, { backgroundColor: textColor }]} />
           <View>
             {items.map((item, index) => (
@@ -74,7 +77,7 @@ export const BottomSheet = ({
                     <View style={styles.iconContainer}>{item.icon}</View>
                   )}
                   <Text
-                    style={styles.itemText}
+                    style={[...coloredTextStyles, ...itemFontSizeStyles]}
                     onPress={() => {
                       if (item.onPress) {
                         item.onPress();
